@@ -11,7 +11,7 @@
 </head>
 <body>
 <c:choose>
-<c:when test="${deleted = true }">
+<c:when test="${deleted == true }">
 ${film.title } was erased.
 <a href="index.html">Go Back To Home</a>
 </c:when>
