@@ -11,8 +11,8 @@
 </head>
 <body>
 	<c:choose>
-		<c:when>
-		</c:when>
+		<%-- <c:when> --%>
+	<%-- 	</c:when> --%>
 		<c:otherwise>
 		</c:otherwise>
 	</c:choose>

@@ -70,6 +70,17 @@ public class FilmController {
 //		get film from DAO, add to model to be displayed in JSP
 		return mv;
 	}
+	@RequestMapping(path = "createFilm.do" , method = RequestMethod.GET)
+	public ModelAndView addFilm(Film film) {
+	
+	ModelAndView mv = new ModelAndView();
+	Film newFilm = filmDao.createFilm(film);
+	System.out.println(newFilm);
+	mv.setViewName("WEB-INF/add.jsp");
+	mv.addObject("film", newFilm);
+	
+	return mv;
 	
 	
+	}
 }

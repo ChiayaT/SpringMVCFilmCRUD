@@ -12,7 +12,7 @@
 <body>
 <c:choose>
 <c:when test="${deleted == true }">
-${film.title } was erased.
+film was erased.
 <a href="index.html">Go Back To Home</a>
 </c:when>
 <c:otherwise>

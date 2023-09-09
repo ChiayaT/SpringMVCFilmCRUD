@@ -26,24 +26,24 @@ public class Film {
 		return id;
 	}
 
-	public Film(int id, String title, String language, String description, int releaseYear, int languageId,
-			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
-			String specialFeatures, List<Actor> actors) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.releaseYear = releaseYear;
-		this.languageId = languageId;
-		this.rentalDuration = rentalDuration;
-		this.rentalRate = rentalRate;
-		this.length = length;
-		this.replacementCost = replacementCost;
-		this.rating = rating;
-		this.specialFeatures = specialFeatures;
-		this.actors = actors;
-		this.language = language;
-	}
+//	public Film(int id, String title, String language, String description, int releaseYear, int languageId,
+//			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
+//			String specialFeatures, List<Actor> actors) {
+//		super();
+//		this.id = id;
+//		this.title = title;
+//		this.description = description;
+//		this.releaseYear = releaseYear;
+//		this.languageId = languageId;
+//		this.rentalDuration = rentalDuration;
+//		this.rentalRate = rentalRate;
+//		this.length = length;
+//		this.replacementCost = replacementCost;
+//		this.rating = rating;
+//		this.specialFeatures = specialFeatures;
+//		this.actors = actors;
+//		this.language = language;
+//	}
 	public Film(int id, String title, String description, int releaseYear, int languageId,
 			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
 			String specialFeatures) {
@@ -158,16 +158,12 @@ public class Film {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Title= ");
 		builder.append(title);
-		builder.append(", Language= ");
-		builder.append(language);
 		builder.append(", Description= ");
 		builder.append(description);
 		builder.append(", ReleaseYear= ");
 		builder.append(releaseYear);
 		builder.append(", Rating= ");
 		builder.append(rating);
-		builder.append(", Actors= ");
-		builder.append(actors);
 		builder.append("\n");
 		return builder.toString();
 	}
