@@ -3,9 +3,6 @@ package com.skilldistillery.film.entities;
 import java.util.List;
 import java.util.Objects;
 
-import com.skilldistillery.filmquery.entities.Actor;
-import com.skilldistillery.filmquery.entities.Film;
-
 public class Actor {
 	private int id;
 	private String firstName;

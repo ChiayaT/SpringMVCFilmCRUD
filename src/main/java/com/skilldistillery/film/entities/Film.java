@@ -3,9 +3,6 @@ package com.skilldistillery.film.entities;
 import java.util.List;
 import java.util.Objects;
 
-import com.skilldistillery.filmquery.entities.Actor;
-import com.skilldistillery.filmquery.entities.Film;
-
 public class Film {
 	private int id;
 	private String title;
@@ -46,6 +43,22 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 		this.actors = actors;
 		this.language = language;
+	}
+	public Film(int id, String title, String description, int releaseYear, int languageId,
+			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
+			String specialFeatures) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.languageId = languageId;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
+		this.length = length;
+		this.replacementCost = replacementCost;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
 	}
 
 	public void setId(int id) {

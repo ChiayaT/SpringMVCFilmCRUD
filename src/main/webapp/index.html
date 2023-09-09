@@ -9,8 +9,43 @@
 	<h1>Spring MVC Film Site</h1>
 	
 	<form action="getFilm.do" method="get">
+		Get Film by ID:  
 		<input type="number" name="filmId">
 		<button>Show Film</button>
+	</form>
+	<br>
+	<form action="getFilm.do" method="get">
+		Get Film by KeyWord: 
+		<input type="text" name="keyword">
+		<button>Show Film</button>
+	</form>
+	<br>
+	<form action="getFilm.do" method="get">
+		<h3>Create film</h3>
+		<br>
+		
+		Title: 
+		<input type="text" name="title"><br>
+		Description: 
+		<input type="text" name="description"><br>
+		Release Year: 
+		<input type="text" name="release_year"><br>
+		Language_id:
+		<input type="number" name="language_id"><br>
+		Rental Duration: 
+		<input type="number" name="rental_duration"><br>
+		Rental Rate: 
+		<input type="number" name="rental_rate"><br>
+		Length of Film:
+		<input type="number" name="length"><br>
+		Replacement Cost
+		<input type="number" name="replacement_cost"><br>
+		Rating: 
+		<input type="text" name="rating"><br>
+		Features: 
+		<input type="text" name="features"><br>
+		
+		<button>Create Film</button>
 	</form>
 
 </body>
