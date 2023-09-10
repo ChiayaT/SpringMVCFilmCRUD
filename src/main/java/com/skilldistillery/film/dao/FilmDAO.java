@@ -18,4 +18,5 @@ public interface FilmDAO {
 		public boolean saveActor(Actor actor);
 		public String getLanguage(int langNumber) throws SQLException;
 		public List<Film> findFilmWithKeyword(String keyword) throws SQLException;
+		public boolean updateFilm(Film film, String field, String param);
 }

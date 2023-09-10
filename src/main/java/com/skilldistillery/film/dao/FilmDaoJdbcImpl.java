@@ -427,4 +427,36 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		}
 		return true;
 	}
+	public boolean updateFilm(Film film, String field, String param) {
+		Connection conn = null;
+		try {
+			conn = DriverManager.getConnection(URL, USERNAME, PASSWD);
+			conn.setAutoCommit(false); // START TRANSACTION
+			String sql =  "UPDATE film "
+                    + " SET ? = ?"
+                  + " WHERE id = ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, field);
+			stmt.setString(2, param);
+			stmt.setInt(3, film.getId());
+			int updateCount = stmt.executeUpdate();
+			
+			if (updateCount != 1) {
+				System.out.println("ERROR");
+				conn.rollback();
+			}
+			conn.commit(); // COMMIT TRANSACTION
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			if (conn != null) {
+				try {
+					conn.rollback();
+				} catch (SQLException sqle2) {
+					System.err.println("Error trying to rollback");
+				}
+			}
+			return false;
+		}
+		return true;
+	}
 }

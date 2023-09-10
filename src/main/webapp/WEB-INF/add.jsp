@@ -13,7 +13,8 @@
 	<c:choose>
 		 <c:when test="${! empty film}"> 
 		 ${film.title} has been added<br>
-		 film id is ${film.id}
+		 film id is ${film.id}<br>
+		 
 		 <br>
 		 <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"> Delete ${film.title }</a>
 	 	</c:when> 
