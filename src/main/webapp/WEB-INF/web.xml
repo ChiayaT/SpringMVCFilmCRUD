@@ -16,5 +16,14 @@
 		<servlet-name>Film</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>update</servlet-name>
+		<servlet-class>update.html</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>update</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+	
 
 </web-app>

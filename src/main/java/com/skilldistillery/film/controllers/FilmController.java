@@ -44,6 +44,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		try {
 			films = filmDao.findFilmWithKeyword(keyword);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

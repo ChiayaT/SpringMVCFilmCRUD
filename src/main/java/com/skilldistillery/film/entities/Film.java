@@ -17,6 +17,7 @@ public class Film {
 	private String rating;
 	private String specialFeatures;
 	private List<Actor> actors;
+	private String category;
 
 	public Film() {
 
@@ -31,7 +32,7 @@ public class Film {
 			String specialFeatures, List<Actor> actors) {
 		super();
 		this.id = id;
-		this.title = title;
+		this.title = title; 
 		this.description = description;
 		this.releaseYear = releaseYear;
 		this.languageId = languageId;
@@ -198,6 +199,14 @@ public class Film {
 
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

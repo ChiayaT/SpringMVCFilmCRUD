@@ -17,6 +17,14 @@
       ${film.description}<br/>
       Rated: ${film.rating}
       <br>
+      Category: ${film.category}
+      <br>
+      Actors: 
+      <c:forEach var="actor" items="${film.actors}">
+      ${actor.firstName} ${actor.lastName}
+      <br>
+      </c:forEach>
+      <br>
       <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"> Delete ${film.title }</a>
       <br>
     </c:forEach>
@@ -27,7 +35,14 @@
       ${film.title}
       ${film.description}<br/>
       Rated: ${film.rating}
-      
+      <br>
+      Category: ${film.category}
+      <br>
+      Actors: 
+      <c:forEach var="actor" items="${film.actors}">
+      ${actor.firstName} ${actor.lastName}
+      <br>
+      </c:forEach>
       <br>
       <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"> Delete ${film.title }</a>
     </c:when>

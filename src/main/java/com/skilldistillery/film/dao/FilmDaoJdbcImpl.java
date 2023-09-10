@@ -48,7 +48,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			String rating = rs.getString("rating");
 			String features = rs.getString("special_features");
 			film = new Film(filmId, title, desc, releaseYear, langId, rentDur, rate, length, repCost, rating, features);
-
+			film.setCategory(findCategoryByFilmId(filmId));
+			System.out.println(film.getCategory());
 			film.setActors(findActorsByFilmId(filmId));
 		}
 		rs.close();
@@ -129,8 +130,9 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, filmId);
 			ResultSet rs = stmt.executeQuery();
-			category = rs.getString("name");
-
+			if (rs.next()) {
+				category = rs.getString("name");
+			}
 			rs.close();
 			stmt.close();
 			conn.close();
@@ -194,7 +196,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			String features = rs.getString("special_features");
 			Film film = new Film(filmId, title, desc, releaseYear, langId, rentDur, rate, length, repCost, rating,
 					features);
-
+			film.setCategory(findCategoryByFilmId(filmId));
 			film.setActors(findActorsByFilmId(filmId));
 			films.add(film);
 			counter += 1;
