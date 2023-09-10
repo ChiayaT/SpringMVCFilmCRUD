@@ -107,6 +107,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				double repCost = rs.getDouble("replacement_cost");
 				String rating = rs.getString("rating");
 				String features = rs.getString("special_features");
+
 				Film film = new Film(filmId, title, desc, releaseYear, langId, rentDur, rate, length, repCost, rating,
 						features);
 				films.add(film);
@@ -118,6 +119,25 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			e.printStackTrace();
 		}
 		return films;
+	}
+
+	public String findCategoryByFilmId(int filmId) {
+		String category = null;
+		try {
+			Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWD);
+			String sql = "SELECT name FROM category JOIN film_category ON category.id = film_category.category_id WHERE film_id = ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, filmId);
+			ResultSet rs = stmt.executeQuery();
+			category = rs.getString("name");
+
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return category;
 	}
 
 	@Override
