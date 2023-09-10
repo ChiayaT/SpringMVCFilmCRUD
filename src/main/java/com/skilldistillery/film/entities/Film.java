@@ -117,8 +117,8 @@ public class Film {
 		return rentalRate;
 	}
 
-	public void setRentalRate(int rentalRate) {
-		this.rentalRate = rentalRate;
+	public void setRentalRate(double d) {
+		this.rentalRate = d;
 	}
 
 	public int getLength() {

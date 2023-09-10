@@ -328,6 +328,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 
 	public Film createFilm(Film film) {
 		Connection conn = null;
+		Film newFilm = null;
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWD);
 			conn.setAutoCommit(false); // START TRANSACTION
@@ -353,6 +354,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				if (keys.next()) {
 					int newFilmId = keys.getInt(1);
 					System.out.println("new film with id = " + newFilmId);
+					film.setId(newFilmId);
+					newFilm = film;
 				}
 			} else {
 				film = null;
@@ -368,7 +371,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 		}
-		return film;
+		return newFilm;
 	}
 
 	public boolean deleteFilm(Film film) {

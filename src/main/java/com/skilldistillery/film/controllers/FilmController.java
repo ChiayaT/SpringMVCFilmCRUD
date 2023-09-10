@@ -1,8 +1,10 @@
 package com.skilldistillery.film.controllers;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +22,7 @@ public class FilmController {
 	@Autowired
 	private FilmDAO filmDao;
 
-
-	@RequestMapping(path = "getFilm.do", params="filmId" , method = RequestMethod.GET)
+	@RequestMapping(path = "getFilm.do", params = "filmId", method = RequestMethod.GET)
 	public ModelAndView getFilm(@RequestParam int filmId) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/film.jsp");
@@ -36,7 +37,8 @@ public class FilmController {
 //		get film from DAO, add to model to be displayed in JSP
 		return mv;
 	}
-	@RequestMapping(path = "getFilm.do", params="keyword" , method = RequestMethod.GET)
+
+	@RequestMapping(path = "getFilm.do", params = "keyword", method = RequestMethod.GET)
 	public ModelAndView getFilm(@RequestParam String keyword) {
 		List<Film> films = null;
 		ModelAndView mv = new ModelAndView();
@@ -51,7 +53,8 @@ public class FilmController {
 //		get film from DAO, add to model to be displayed in JSP
 		return mv;
 	}
-	@RequestMapping(path = "getFilm.do", params="delete" , method = RequestMethod.GET)
+
+	@RequestMapping(path = "getFilm.do", params = "delete", method = RequestMethod.GET)
 	public ModelAndView deletefilm(@RequestParam int delete) {
 		boolean deleted = false;
 		Film film = null;
@@ -70,9 +73,20 @@ public class FilmController {
 //		get film from DAO, add to model to be displayed in JSP
 		return mv;
 	}
-	@RequestMapping(path = "createFilm.do" , method = RequestMethod.GET)
-	public ModelAndView addFilm(Film film) {
-	
+
+	@RequestMapping(path = "createFilm.do",  method = RequestMethod.GET)
+	public ModelAndView addFilm(HttpServletRequest req, HttpServletResponse resp) {
+	Film film = new Film();
+	film.setTitle(req.getParameter("title"));
+	film.setDescription(req.getParameter("description"));
+	film.setReleaseYear(Integer.parseInt(req.getParameter("releaseYear")));
+	film.setLanguageId(Integer.parseInt(req.getParameter("languageId")));
+	film.setRentalDuration(Integer.parseInt(req.getParameter("rentalDuration")));
+	film.setRentalRate(Double.parseDouble(req.getParameter("rentalRate")));
+	film.setLength(Integer.parseInt(req.getParameter("length")));
+	film.setReplacementCost(Double.parseDouble(req.getParameter("replacementCost")));
+	film.setRating(req.getParameter("rating"));
+	film.setSpecialFeatures(req.getParameter("features"));
 	ModelAndView mv = new ModelAndView();
 	Film newFilm = filmDao.createFilm(film);
 	System.out.println(newFilm);
