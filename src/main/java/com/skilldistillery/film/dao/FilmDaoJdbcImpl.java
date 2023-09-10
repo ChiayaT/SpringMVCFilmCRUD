@@ -345,8 +345,9 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			stmt.setDouble(8, film.getReplacementCost());
 			stmt.setString(9, film.getRating());
 			stmt.setString(10, film.getSpecialFeatures());
-
+			System.out.println(stmt);
 			int updateCount = stmt.executeUpdate();
+			System.out.println(updateCount + "sdfasdfasdfasdfasdf");
 			if (updateCount == 1) {
 				ResultSet keys = stmt.getGeneratedKeys();
 				if (keys.next()) {

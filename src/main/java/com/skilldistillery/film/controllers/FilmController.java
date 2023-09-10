@@ -76,8 +76,8 @@ public class FilmController {
 	ModelAndView mv = new ModelAndView();
 	Film newFilm = filmDao.createFilm(film);
 	System.out.println(newFilm);
-	mv.setViewName("WEB-INF/add.jsp");
 	mv.addObject("film", newFilm);
+	mv.setViewName("WEB-INF/add.jsp");
 	
 	return mv;
 	

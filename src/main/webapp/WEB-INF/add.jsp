@@ -11,9 +11,12 @@
 </head>
 <body>
 	<c:choose>
-		<%-- <c:when> --%>
-	<%-- 	</c:when> --%>
+		 <c:when test="${! empty film}"> 
+		 ${film.title} has been added<br>
+		 film id is ${film.id}
+	 	</c:when> 
 		<c:otherwise>
+		your film has not been added
 		</c:otherwise>
 	</c:choose>
 
