@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>MVC Film Site</title>
+	<meta charset="UTF-8">
+	<title>MVC Film Site</title>
 </head>
+
 <body>
 
 	<h1>Spring MVC Film Site</h1>
-	
+
 	<form action="getFilm.do" method="get">
-		Get Film by ID:  
+		Get Film by ID:
 		<input type="number" name="filmId">
 		<button>Show Film</button>
 	</form>
 	<br>
 	<form action="getFilm.do" method="get">
-		Get Film by KeyWord: 
+		Get Film by KeyWord:
 		<input type="text" name="keyword">
 		<button>Show Film</button>
 	</form>
@@ -23,30 +25,54 @@
 	<form action="createFilm.do" method="get">
 		<h3>Create film</h3>
 		<br>
-		
-		Title: 
+
+		Title:
 		<input type="text" name="title" required="required field"><br>
-		Description: 
+		Description:
 		<input type="text" name="description" value="NULL"><br>
-		Release Year: 
+		Release Year:
 		<input type="number" name="releaseYear" value="0"><br>
 		Language_id:
-		<input type="number" name="languageId" value="1" required="required field"><br>
-		Rental Duration: 
+		<select name="languageId" >
+			<option value="1">English</option>
+			<option value="2">Italian</option>
+			<option value="3">Mandarin</option>
+			<option value="4">French</option>
+			<option value="5">German</option>
+		</select>
+		<br>
+		Rental Duration:
 		<input type="number" name="rentalDuration" value="3"><br>
-		Rental Rate: 
-		<input type="number"  name="rentalRate" value="4.99"><br>
+		Rental Rate:
+		<input type="number" name="rentalRate" value="4.99"><br>
 		Length of Film:
-		<input  type="number" name="length" value="0"><br>
+		<input type="number" name="length" value="0"><br>
 		Replacement Cost
 		<input type="number" name="replacementCost" value="19.99"><br>
-		Rating: 
-		<input type="text" name="rating" value="G"><br>
-		Features: 
-		<input type="text" name="features" value=""><br>
-		
+		Rating:
+		<select name="rating" >
+			
+			<option value="G">G</option>
+			<option value="PG">PG</option>
+			<option value="PG13">PG13</option>
+			<option value="R">R</option>
+			<option value="NC17">NC17</option>
+		</select>
+		<br>
+		Features:
+		<select name="features" >
+			
+			<option value="">None</option>
+			<option value="Trailers">Trailers</option>
+			<option value="Commentaries">Commentaries</option>
+			<option value="Deleted Scenes">Deleted Scenes</option>
+			<option value="Behind the Scenes">Behind the Scenes</option>
+		</select>
+		<br>
+
 		<button>Create Film</button>
 	</form>
 
 </body>
+
 </html>

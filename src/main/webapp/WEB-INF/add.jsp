@@ -14,9 +14,11 @@
 		 <c:when test="${! empty film}"> 
 		 ${film.title} has been added<br>
 		 film id is ${film.id}
+		 <br>
+		 <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"> Delete ${film.title }</a>
 	 	</c:when> 
 		<c:otherwise>
-		your film has not been added
+		ERROR: your film has not been added
 		</c:otherwise>
 	</c:choose>
 
