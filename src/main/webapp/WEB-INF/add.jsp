@@ -16,7 +16,7 @@
 		 film id is ${film.id}<br>
 		 
 		 <br>
-		 <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"> Delete ${film.title }</a>
+		 <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"><button style="background-color: red; border-coler: black; color: white"> Delete ${film.title }</button></a>
 	 	</c:when> 
 		<c:otherwise>
 		ERROR: your film has not been added
