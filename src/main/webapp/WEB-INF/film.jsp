@@ -94,6 +94,9 @@
       ${actor.firstName} ${actor.lastName}
       <br>
 					</c:forEach>
+						<br> <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"><button
+								style="background-color: red; border-color: black; color: white">Delete
+								${film.title }</button></a> <br>
 					<br>
 
 					<form action="updateFilm.do" method="get">
@@ -137,9 +140,6 @@
 
 						<button name="id" value="${film.id }">Update Film</button>
 						<br>
-						<br> <a href="/MVCFilmSite/getFilm.do?delete=${film.id}"><button
-								style="background-color: red; border-coler: black; color: white">Delete
-								${film.title }</button></a> <br>
 					</form>
 				</c:when>
 				<c:otherwise>
